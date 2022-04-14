@@ -205,7 +205,7 @@ def main():
         chi_3_criterion.cuda()
         chi_4_criterion.cuda()
 
-    train_dataset = datasets.PDB_data_spitter(data_dir=args.data_dir + "/train_s95_chi")
+    train_dataset = datasets.PDB_data_spitter(data_dir=args.data_dir + "/train_s95_chi")  # 看看数据怎么采样的
     train_dataset.len = 8145448  # NOTE -- need to update this if underlying data changes
 
     test_dataset = datasets.PDB_data_spitter(data_dir=args.data_dir + "/test_s95_chi")
