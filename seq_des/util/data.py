@@ -230,6 +230,7 @@ def get_pdb_data(pdb, data_dir="", assembly=1, skip_download=0):
 
             # get rotamer chi angles
             if (not skip_res) and (res_name in common.atoms.res_label_dict.keys()):
+                # 这两种氨基酸为 0 
                 if res_name == "GLY" or res_name == "ALA":
                     chi = [0, 0, 0, 0]
                     mask = [0, 0, 0, 0]
@@ -238,6 +239,7 @@ def get_pdb_data(pdb, data_dir="", assembly=1, skip_download=0):
                     chi = []
                     mask = []
                     if "N" in residue_bb_index[res_idx].keys() and "CA" in residue_bb_index[res_idx].keys():
+                        #chi是用N CA C这些计算来的
                         n = Bio.PDB.vectors.Vector(list(atom_coords[residue_bb_index[res_idx]["N"]][0]))
                         ca = Bio.PDB.vectors.Vector(list(atom_coords[residue_bb_index[res_idx]["CA"]][0]))
                         if (
