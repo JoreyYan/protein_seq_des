@@ -83,7 +83,11 @@ def download_pdb(pdb, data_dir, assembly=1):
 
 def get_pdb_chains(pdb, data_dir, assembly=1, skip_download=0):
 
-    """Function to load pdb structure via Biopython and extract all chains. 
+    """
+    
+    获得主链
+    
+    Function to load pdb structure via Biopython and extract all chains. 
     Uses biological assembly as default, otherwise gets default pdb.
     
     Args:
